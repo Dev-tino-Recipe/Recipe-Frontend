@@ -1,0 +1,52 @@
+.contents-container {
+  padding: 20px;
+  max-width: 393px;
+}
+
+.recipe-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.author {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.recipe-image {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.rating-section {
+  margin-top: 30px;
+}
+
+.stars {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.related-recipes {
+  margin-top: 30px;
+}
+
+.related-recipe-item {
+  margin-bottom: 10px;
+}
