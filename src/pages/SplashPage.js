@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../styles/SplashPage.css';
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "../styles/SplashPage.css";
+import SplashImage from "../assets/mdi_cook.png";
 
 const SplashPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate('/main');
+      navigate("/main");
     }, 800);
     return () => clearTimeout(timer);
   }, [navigate]);
 
   return (
     <div className="splash-container">
-      <h1 className="app-title">My Recipe App</h1>
-      <img src="/splash-image.png" alt="Splash" className="splash-image" />
+      <img src={SplashImage} alt="Splash" className="splash-image" />
     </div>
   );
 };

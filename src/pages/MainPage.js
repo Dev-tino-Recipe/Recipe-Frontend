@@ -1,18 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/MainPage.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "../styles/MainPage.css";
+import ContentComp from "../components/ContentComp";
 
 const MainPage = () => {
   return (
     <div className="main-container">
-      <Link to="/search" className="search-button">검색</Link>
+      <Link to="/search" className="search-button">
+        검색
+      </Link>
 
       <section className="section">
         <h2>Today's</h2>
         <div className="content-grid">
-          <div className="content-item">Content 1</div>
-          <div className="content-item">Content 2</div>
-          <div className="content-item">Content 3</div>
+          <ContentComp content={1} />
+          <ContentComp content={2} />
+          <ContentComp content={3} />
         </div>
       </section>
 
