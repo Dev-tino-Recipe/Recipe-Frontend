@@ -1,0 +1,86 @@
+.login-container {
+    padding: 50px;
+    max-width: 393px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 3px solid black;
+    position: relative;
+    min-height: border-box;
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .login-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .login-logo {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .login-header h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .login-form {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .login-form label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .login-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .login-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .signup-button, .login-button {
+    padding: 10px 30px;
+    margin-top: 20px;
+    border: 2px solid black;
+    background-color: silver;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    color: black;
+  }
+  
+  .signup-button:hover, .login-button:hover {
+    background-color: skyblue;
+  }
+  
