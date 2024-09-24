@@ -23,7 +23,7 @@ const MainPage = () => {
 
   const handleLogout = () => {
     localLogout();
-    navigate('/login');
+    navigate('/login', {replace: true});
   };
 
   return (
@@ -60,8 +60,8 @@ const MainPage = () => {
           </div>
 
           <div className={"flex justify-between gap-6"}>
-            {[1, 2, 3].map(() => {
-              return <PreviewRecipe/>
+            {[1, 2, 3].map((value, index) => {
+              return <PreviewRecipe key={index}/>
             })}
           </div>
         </section>
