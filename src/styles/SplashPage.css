@@ -1,27 +1,26 @@
-.splash-container {
-  padding: 50px;
-    max-width: 393px;
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    border: 3px solid black;
-    position: relative;
-    min-height: border-box;
-    color: black;
-}
+/*.splash-container {*/
+/*    padding: 50px;*/
+/*    max-width: 393px;*/
+/*    margin: 50px auto;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    background-color: white;*/
+/*    border: 3px solid black;*/
+/*    position: relative;*/
+/*    color: black;*/
+/*}*/
 
 .app-title {
-  font-size: 2rem;
-  margin-top: 50px;
-  text-align: center;
+    font-size: 2rem;
+    margin-top: 50px;
+    text-align: center;
 }
 
 .splash-image {
-  width: 150px;
-  height: auto;
-  margin-top: 50px;
-  margin-bottom: 150px;
+    width: 150px;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 150px;
 }

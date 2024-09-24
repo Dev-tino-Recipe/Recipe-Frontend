@@ -1,22 +1,18 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../styles/SplashPage.css'; // SplashPage의 CSS
+import React from 'react';
+import {useNavigate} from 'react-router-dom';
+import '../styles/SplashPage.css';
+import ChefIcon from "../assets/chef_icon.png"
 
 const SplashPage = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      navigate('/login');
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, [navigate]);
-
   return (
-    <div className="splash-container">
-      <h1 className="app-title">Daily Recipe</h1>
-      <img src="/images/splash.png" alt="Splash" className="splash-image" />
-    </div>
+      <div onClick={() => {
+        navigate('/login');
+      }} className="splash-container my-0 h-full flex flex-col justify-center items-center bg-[#FEF5ED]">
+        <img src={ChefIcon} alt="Splash"/>
+        <p className={"font-bold mt-10"}>터치 하여 시작!</p>
+      </div>
   );
 };
 

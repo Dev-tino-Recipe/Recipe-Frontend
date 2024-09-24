@@ -10,7 +10,7 @@ const SearchPage = () => {
 
   return (
     <div className="search-container">
-      <img src="/images/img-logo.png" alt="Recipe logo" className="recipe-logo" />
+      <img src="/src/assets/img-logo.png" alt="Recipe logo" className="recipe-logo" />
       <h3 className="recipe-title">레시피 검색</h3>
       <div className="search-input-container">
         <input

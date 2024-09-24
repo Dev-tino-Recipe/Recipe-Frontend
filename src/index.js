@@ -1,11 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom/client";
 import './index.css';
 import App from './App';
+import axios from "axios";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+// 인증요청시 쿠키를 전송하기 위해 설정
+axios.defaults.withCredentials = true;
+axios.defaults.headers.options = {
+  'Content-Type': 'application/json',
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+    <React.StrictMode>
+      <App/>
+    </React.StrictMode>,
 );
