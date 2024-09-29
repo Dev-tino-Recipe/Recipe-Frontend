@@ -43,7 +43,7 @@ const MainPage = () => {
         <section>
           <div className={"flex justify-between mb-4"}>
             <h1 className={"text-3xl font-bold"}>저장한 레시피</h1>
-            <p className={"flex justify-center items-center"}>더보기 ></p>
+            <p className={"flex justify-center items-center"}>더보기 &gt;</p>
           </div>
 
           <div className={"flex justify-between gap-6"}>
@@ -56,7 +56,7 @@ const MainPage = () => {
         <section>
           <div className={"flex justify-between mb-4"}>
             <h1 className={"text-3xl font-bold"}>등록한 레시피</h1>
-            <p className={"flex justify-center items-center"}>더보기 ></p>
+            <p className={"flex justify-center items-center"}>더보기 &gt;</p>
           </div>
 
           <div className={"flex justify-between gap-6"}>
