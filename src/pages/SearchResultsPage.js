@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/SearchResultsPage.css';  // 스타일 파일을 가져옵니다
+import '../styles/SearchResultsPage.css';
+import NavBar from '../components/NavBar';
 
 const SearchResultsPage = () => {
   const navigate = useNavigate();
   
-  // 임의의 검색 결과 데이터를 설정합니다.
   const results = [
     {
       id: 1,
@@ -52,6 +52,8 @@ const SearchResultsPage = () => {
           </div>
         ))}
       </div>
+
+      <NavBar />
     </div>
   );
 };

@@ -1,12 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/SearchPage.css';
 
 const SearchPage = () => {
   const [searchText, setSearchText] = useState('');
+  const [recentSearches, setRecentSearches] = useState([]);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const storedSearches = localStorage.getItem('recentSearches');
+    if (storedSearches) {
+      setRecentSearches(JSON.parse(storedSearches));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+  }, [recentSearches]);
+
   const handleSearch = () => {
+    if (searchText.trim() === '') return;
+
+    const updatedSearches = [searchText, ...recentSearches.slice(0, 5)];
+    setRecentSearches(updatedSearches);
+    setSearchText(''); 
     navigate('/search-results');
   };
 
@@ -25,14 +42,13 @@ const SearchPage = () => {
       </div>
 
       <div className="category-section">
-        <h3 className="category-title">최근 검색어</h3> 
+        <h3 className="category-title">최근 검색어</h3>
         <div className="category-grid">
-          <div className="category-item">-</div>
-          <div className="category-item">-</div>
-          <div className="category-item">-</div>
-          <div className="category-item">-</div>
-          <div className="category-item">-</div>
-          <div className="category-item">-</div>
+          {recentSearches.map((search, index) => (
+            <div key={index} className="category-item">
+              {search}
+            </div>
+          ))}
         </div>
       </div>
     </div>
