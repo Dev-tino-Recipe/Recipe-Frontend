@@ -1,6 +1,6 @@
 "use client";
 
-import {usePathname, useRouter} from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const Header = () => {
   const titleMap: Record<string, string> = {
@@ -8,8 +8,8 @@ const Header = () => {
     "/signup": "회원가입",
   };
 
-  let pathname = usePathname();
-  let router = useRouter();
+  const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <div

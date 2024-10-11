@@ -13,15 +13,16 @@ function axiosInstance(isOwnServer: boolean) {
 
 export async function clientAxiosRequest<T>(
   config: AxiosRequestConfig,
-  isOwnServer: boolean,
+  isOwnServer: boolean
 ) {
-  let response: AxiosResponse<T, AxiosRequestConfig>;
-  try {
-    response = await axiosInstance(isOwnServer).request(config);
-  } catch (e: any) {
-    console.log(e.message);
-    response = e?.response;
-  }
+  // let response: AxiosResponse<T, AxiosRequestConfig>;
+  const response = await axiosInstance(isOwnServer).request(config);
+  // try {
 
-  return response;
+  // } catch (e) {
+  //   console.log(e);
+  //   response = e?.response as AxiosResponse;
+  // }
+
+  return response as AxiosResponse<T, AxiosRequestConfig>;
 }
