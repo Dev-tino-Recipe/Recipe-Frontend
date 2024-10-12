@@ -5,14 +5,14 @@ import React, { ReactElement, useLayoutEffect, useRef } from "react";
 function AutoTextArea({
   rows = 1,
   ...props
-}: React.HTMLProps<HTMLTextAreaElement>): ReactElement {
+}: Readonly<React.HTMLProps<HTMLTextAreaElement>>): ReactElement {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   useLayoutEffect(() => {
     if (!textAreaRef.current) return;
 
     const cloneNode = textAreaRef.current.cloneNode(
-      true,
+      true
     ) as HTMLTextAreaElement;
 
     (textAreaRef.current as Node).parentNode!.appendChild(cloneNode);
