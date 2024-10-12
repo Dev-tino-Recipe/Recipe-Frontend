@@ -13,7 +13,7 @@ const useScreenOn = (marginOffset: number) => {
       new IntersectionObserver(handleOnScreen, {
         rootMargin: `${marginOffset}px`,
       }),
-    []
+    [handleOnScreen, marginOffset]
   );
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const useScreenOn = (marginOffset: number) => {
     observer.observe(targetRef.current);
 
     return () => observer.disconnect();
-  }, [targetRef]);
+  }, [observer, targetRef]);
 
   return { isOnScreen, targetRef };
 };

@@ -22,7 +22,7 @@ export default function useFetchOwnRecipe(pageSize: number) {
           result: Recipe[];
         }>(
           {
-            url: "http://localhost:4000/api/recipe/recheck",
+            url: "/recipe/recheck",
             params: {
               page: pageParam,
               pageSize,

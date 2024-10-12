@@ -24,7 +24,7 @@ export default function useFetchUser() {
         result: { user: User };
       }>(
         {
-          url: "http://localhost:4000/api/auth/user",
+          url: "/auth/user",
           method: "get",
         },
         false

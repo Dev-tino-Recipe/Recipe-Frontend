@@ -8,7 +8,7 @@ export default function useFetchRecipe(recipeId: string) {
     queryFn: async () => {
       const { data } = await axiosRequest(
         {
-          url: "http://localhost:4000/api/recipe/detail",
+          url: "/recipe/detail",
           method: "get",
           params: {
             recipeId,

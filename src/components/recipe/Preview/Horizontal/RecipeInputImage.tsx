@@ -1,4 +1,5 @@
 import ImageInput from "@/components/ImageInput";
+import Image from "next/image";
 import React from "react";
 
 export default function RecipeInputImage({
@@ -16,7 +17,9 @@ export default function RecipeInputImage({
     >
       {!isReadOnly && !src && <div className={"text-5xl"}>+</div>}
       {src && (
-        <img
+        <Image
+          width={150}
+          height={150}
           className={"object-cover w-full h-full"}
           src={src}
           alt="유효하지 않은 이미지 입니다."

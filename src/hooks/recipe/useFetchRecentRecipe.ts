@@ -8,7 +8,7 @@ export default function useFetchRecentRecipe(pageSize: number) {
   const [recentRecipeIds, setRecentRecipeIds] = useState<string[]>([]);
   useEffect(() => {
     setRecentRecipeIds(getRecentRecipeIds().slice(0, pageSize));
-  }, []);
+  }, [pageSize]);
 
   const results = useQueries<UseQueryOptions<RecipeDetailType>[]>({
     queries: recentRecipeIds.map((recipeId) => ({
@@ -16,7 +16,7 @@ export default function useFetchRecentRecipe(pageSize: number) {
       queryFn: async () => {
         const { data } = await axiosRequest(
           {
-            url: "http://localhost:4000/api/recipe/detail",
+            url: "/recipe/detail",
             method: "get",
             params: {
               recipeId,

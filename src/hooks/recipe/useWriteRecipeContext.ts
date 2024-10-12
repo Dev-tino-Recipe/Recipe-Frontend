@@ -326,7 +326,7 @@ export default function useWriteRecipeContext() {
 
       const { data } = await axiosRequest(
         {
-          url: "http://localhost:4000/api/recipe/regist",
+          url: "/recipe/regist",
           method: "post",
           data: { userId, ...state },
         },

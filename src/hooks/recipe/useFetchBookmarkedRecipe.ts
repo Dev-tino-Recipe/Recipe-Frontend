@@ -20,7 +20,7 @@ export default function useFetchBookmarkedRecipe(pageSize: number) {
           result: Recipe[];
         }>(
           {
-            url: "http://localhost:4000/api/recipe/bookmarks",
+            url: "/recipe/bookmarks",
             method: "get",
             params: {
               page: pageParam,

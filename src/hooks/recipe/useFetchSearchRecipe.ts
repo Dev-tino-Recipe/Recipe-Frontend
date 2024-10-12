@@ -11,7 +11,7 @@ export default function useFetchSearchRecipe(value: string) {
         result: Recipe[];
       }>(
         {
-          url: "http://localhost:4000/api/recipe/search",
+          url: "/recipe/search",
           params: {
             page: pageParam,
             pageSize: 10,
