@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 
 function axiosInstance(isOwnServer: boolean) {
   return axios.create({
@@ -12,17 +12,19 @@ function axiosInstance(isOwnServer: boolean) {
 }
 
 export async function clientAxiosRequest<T>(
-  config: AxiosRequestConfig,
+  config: AxiosRequestConfig<T>,
   isOwnServer: boolean
 ) {
-  // let response: AxiosResponse<T, AxiosRequestConfig>;
-  const response = await axiosInstance(isOwnServer).request(config);
-  // try {
+  let response: AxiosResponse<T, typeof config>;
+  try {
+    response = await axiosInstance(isOwnServer).request(config);
+  } catch (e) {
+    if (e instanceof AxiosError) {
+      response = (e as AxiosError<T, typeof config>).response!;
+    } else {
+      throw e;
+    }
+  }
 
-  // } catch (e) {
-  //   console.log(e);
-  //   response = e?.response as AxiosResponse;
-  // }
-
-  return response as AxiosResponse<T, AxiosRequestConfig>;
+  return response;
 }

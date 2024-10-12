@@ -1,7 +1,7 @@
 "use server";
 
-import {cookies} from "next/headers";
-import axios, {AxiosRequestConfig, AxiosResponse} from "axios";
+import { cookies } from "next/headers";
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 
 function axiosInstance(isOwnServer: boolean) {
   const session = cookies().get("session_cookie_name")?.value;
@@ -19,16 +19,18 @@ function axiosInstance(isOwnServer: boolean) {
 
 export async function serverAxiosRequest<T>(
   config: AxiosRequestConfig,
-  isOwnServer: boolean,
+  isOwnServer: boolean
 ) {
-  // let response: ;
-  const response = await axiosInstance(isOwnServer).request(config);
-  // try {
-    
-  // } catch (e: any) {
-  //   console.log(e.message);
-  //   response = e?.response;
-  // }
+  let response: AxiosResponse<T, AxiosRequestConfig<T>>;
+  try {
+    response = await axiosInstance(isOwnServer).request(config);
+  } catch (e) {
+    if (e instanceof AxiosError) {
+      response = (e as AxiosError<T, AxiosRequestConfig<T>>).response!;
+    } else {
+      throw e;
+    }
+  }
 
-  return response as AxiosResponse<T, AxiosRequestConfig>;
+  return response;
 }
