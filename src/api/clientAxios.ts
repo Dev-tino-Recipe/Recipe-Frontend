@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 
 function axiosInstance(isOwnServer: boolean) {
   return axios.create({
-    baseURL: `http://localhost:${isOwnServer ? "3000" : "4000"}/api`,
+    baseURL: `http://${isOwnServer ? "localhost" : "twoone14:shop"}:${isOwnServer ? "3000" : "4000"}/api`,
     timeout: 1000,
     headers: {
       "Content-Type": "application/json",
@@ -22,6 +22,7 @@ export async function clientAxiosRequest<T>(
     if (e instanceof AxiosError) {
       response = (e as AxiosError<T, typeof config>).response!;
     } else {
+      console.error(e);
       throw e;
     }
   }

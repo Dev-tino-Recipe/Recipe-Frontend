@@ -4,10 +4,10 @@ import { clientAxiosRequest } from "@/api/clientAxios";
 
 export async function axiosRequest<T>(
   config: AxiosRequestConfig,
-  isOwnServer: boolean,
+  isOwnServer: boolean
 ) {
   let response: AxiosResponse<T, AxiosRequestConfig>;
-  if (typeof window === "undefined") {
+  if (isOwnServer) {
     response = await serverAxiosRequest<T>(config, isOwnServer);
   } else {
     response = await clientAxiosRequest<T>(config, isOwnServer);
